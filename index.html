@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Kamu yang Selalu di Hatiku</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff0f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #ff6b8b, #ff8e53);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(255, 107, 139, 0.3);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .heart {
+            color: #ff6b8b;
+            font-size: 1.5em;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        
+        .love-letter {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .love-letter:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(135deg, #ff6b8b, #ff8e53);
+            border-radius: 10px 10px 0 0;
+        }
+        
+        .photo-frame {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .photo-frame img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #ff6b8b;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b8b, #ff8e53);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(255, 107, 139, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 107, 139, 0.4);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #888;
+        }
+        
+        .hidden-message {
+            display: none;
+            background-color: #f8e1e7;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .love-quote {
+            font-style: italic;
+            color: #ff6b8b;
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span id="namePlaceholder">FIONASYA KHANSA NAYLUVA</span> <span class="heart">❤</span></h1>
+            <p>Sebuah pesan kecil dari hatiku untukmu</p>
+        </header>
+        
+        <div class="photo-frame">
+            <!-- Ganti dengan foto orang yang kamu cintai -->
+            <img src="NOL.jpeg">
+        </div>
+        
+        <div class="love-letter">
+            <h2>Surat Cinta Kecilku</h2>
+            <p>Hai sayang,</p>
+            
+            <p>Aku minta maaf ya kalo ga terlalu pengertian buat kamu.</p>
+            
+            <p>Sejak pertama kali dekat denganmu, hidupku terasa lebih berwarna. Senyummu adalah matahari yang menghangatkan hariku, tawamu adalah musik terindah yang pernah kudengar.</p>
+            
+            <p class="love-quote">"Kamu adalah alasan mengapa hatiku senang setiap hari."</p>
+            
+            <p>Aku bersyukur bisa mengenalmu, memahamimu. Setiap momen bersamamu adalah hadiah terindah yang pernah kuterima.</p>
+            
+            <p>Semoga kita bisa tumbuh bersama aku udah nyaman sama kamu, aku bener bener happy sama kamu.</p>
+
+            <p>Kamu terbaik, mata, senyum, tawa, wajah, rambut kamu aku menyukai itu semua.</p>
+            
+            <p>Dengan cinta,<br>
+            <span id="myName">AHMAD RAFLIANO</span></p>
+        </div>
+        
+        <div style="text-align: center;">
+            <button class="btn" onclick="showMessage()">Klik untuk Pesan Spesial</button>
+            <div id="specialMessage" class="hidden-message">
+                <h3>Aku sangat mencintaimu sayang. </h3>
+                <p>Terima kasih telah menjadi bagian hidupku dan mau sama aku. 
+                    Love You <span class="heart">❤</span></p>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <p>Ingin menambahkan nama kalian?</p>
+            <input type="text" id="yourName" placeholder="Namamu" style="padding: 8px; border-radius: 5px; border: 1px solid #ff6b8b;">
+            <input type="text" id="theirName" placeholder="Nama mereka" style="padding: 8px; border-radius: 5px; border: 1px solid #ff6b8b;">
+            <button class="btn" onclick="updateNames()" style="margin-left: 10px;">Update</button>
+        </div>
+        
+        <footer>
+            <p>Dibuat dengan <span class="heart">❤</span> untuk seseorang yang spesial</p>
+        </footer>
+    </div>
+    
+    <script>
+        function showMessage() {
+            document.getElementById('specialMessage').style.display = 'block';
+        }
+        
+        function updateNames() {
+            const yourName = document.getElementById('yourName').value;
+            const theirName = document.getElementById('theirName').value;
+            
+            if (yourName) {
+                document.getElementById('myName').textContent = yourName;
+            }
+            
+            if (theirName) {
+                document.getElementById('namePlaceholder').textContent = theirName;
+            }
+        }
+    </script>
+</body>
+</html>
